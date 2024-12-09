@@ -9,6 +9,6 @@ export interface Match {
   cpu: string;
   turnBelongsTo: string;
   availablePositions: string[];
-  board: BoardPosition[];
+  board: BoardPosition[][];
   result?: MatchResult;
 }
