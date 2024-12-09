@@ -62,4 +62,27 @@ export class MatchService {
     return positions;
   }
 
+  public chosen(choice: number): void {
+    let player: string = '';
+    let cpu: string = '';
+
+    if (choice === 0) {
+      player = this.matchSignal().choices[0];
+      cpu = this.matchSignal().choices[1];
+    } else {
+      player = this.matchSignal().choices[1];
+      cpu = this.matchSignal().choices[0];
+    }
+
+    this.matchSignal.set({
+      state: this.matchSignal().state,
+      choices: this.matchSignal().choices,
+      player,
+      cpu,
+      turnBelongsTo: player,
+      availablePositions: this.matchSignal().availablePositions,
+      board: this.matchSignal().board
+    });
+  }
+
 }
