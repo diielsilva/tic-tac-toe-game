@@ -1,0 +1,5 @@
+<div>
+  @for (option of match().choices; track $index) {
+    <div (click)="choose($index)"> {{ option }}</div>
+  }
+</div>
