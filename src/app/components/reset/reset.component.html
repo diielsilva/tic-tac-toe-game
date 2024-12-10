@@ -1,0 +1,15 @@
+@switch (match().result) {
+
+  @case (0) {
+    <h1>Congratulations, you won! 🎉</h1>
+  }
+  @case (1) {
+    <h1>You've lost! 😔</h1>
+  }
+  @case (2) {
+    <h1>The match is draw! ✌️</h1>
+  }
+
+}
+
+<button (click)="reset()">Play Again</button>
