@@ -1,5 +1,7 @@
-<div>
+<h1>Pick An Option</h1>
+<div class="option-container">
   @for (option of match().choices; track $index) {
-    <div (click)="choose($index)"> {{ option }}</div>
+    <div class="option card" (click)="choose($index)"> {{ option }}</div>
   }
 </div>
+

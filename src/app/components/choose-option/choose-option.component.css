@@ -1,0 +1,12 @@
+.option-container {
+  display: flex;
+  justify-content: center;
+}
+
+.option {
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  text-align: center;
+  align-content: center;
+}
