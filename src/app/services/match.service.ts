@@ -75,6 +75,7 @@ export class MatchService {
       cpu = this.matchSignal().choices[0];
     }
 
+    this.matchSignal().state = MatchState.PLAYING;
     this.matchSignal().player = player;
     this.matchSignal().cpu = cpu;
     this.matchSignal().turnBelongsTo = player;
