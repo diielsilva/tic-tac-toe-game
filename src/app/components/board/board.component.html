@@ -1,8 +1,9 @@
+<h1>Pick An Option</h1>
 @for (row of matchState().board; let rowIndex = $index; track rowIndex) {
   <div class="board-row">
 
     @for (column of row; let columnIndex = $index; track columnIndex) {
-      <div class="board-square" (click)="choose(rowIndex, columnIndex)">{{ column.value }}</div>
+      <div class="card" (click)="choose(rowIndex, columnIndex)">{{ column.value }}</div>
     }
 
   </div>
