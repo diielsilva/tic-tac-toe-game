@@ -123,6 +123,10 @@ export class MatchService {
 
   }
 
+  public reset(): void {
+    this.matchSignal.set(this.start());
+  }
+
   private compactChosenPosition(row: number, column: number): string {
     return `${row}${column}`;
   }
