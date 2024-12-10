@@ -1,0 +1,11 @@
+@switch (matchState().state) {
+  @case (0) {
+    <app-choose-option [match]="matchState()" (onChoose)="choose($event)"></app-choose-option>
+  }
+  @case (1) {
+    <app-board [matchState]="matchState()" (onChoose)="play($event)"></app-board>
+  }
+  @case (2) {
+    <app-reset [match]="matchState()" (onReset)="restart()"></app-reset>
+  }
+}
