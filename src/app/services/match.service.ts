@@ -99,24 +99,30 @@ export class MatchService {
         if (hasWinner) {
           this.matchSignal().state = MatchState.FINISHED;
           this.matchSignal().result = currentTurn === this.matchSignal().player ? MatchResult.PLAYER_VICTORY : MatchResult.CPU_VICTORY;
+          return;
         }
 
         if (hasDraw) {
           this.matchSignal().state = MatchState.FINISHED;
           this.matchSignal().result = MatchResult.DRAW;
+          return;
         }
 
       }
 
-      this.changeTurn(currentTurn);
+      const shouldChangeTurn: boolean = this.matchSignal().availablePositions.length > 0;
 
-      const isCpuTurn: boolean = this.matchSignal().turnBelongsTo === this.matchSignal().cpu;
+      if (shouldChangeTurn) {
+        this.changeTurn(currentTurn);
 
-      if (isCpuTurn) {
-        const position: string = this.getRandomPosition();
-        const indexes: number[] = this.extractChosenPosition(position);
+        const isCpuTurn: boolean = this.matchSignal().turnBelongsTo === this.matchSignal().cpu;
 
-        this.play(indexes[0], indexes[1]);
+        if (isCpuTurn) {
+          const position: string = this.getRandomPosition();
+          const indexes: number[] = this.extractChosenPosition(position);
+
+          this.play(indexes[0], indexes[1]);
+        }
       }
 
     }
