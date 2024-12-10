@@ -2,17 +2,19 @@
 :root {
   --primary-color: #f32a76;
   --secondary-color: #34dbe3;
+  --primary-radius: 10px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
 }
 
 html, body {
   height: 100%;
-  background: linear-gradient(var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 }
 
 body {
@@ -23,8 +25,8 @@ body {
 
 .container {
   background-color: #ffffff;
-  width: 100dvw;
-  height: 100dvh;
+  width: 90dvw;
+  height: 90dvh;
   max-width: 700px;
   max-height: 700px;
   display: flex;
@@ -32,4 +34,21 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-radius: var(--primary-radius);
+}
+
+.card {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  text-align: center;
+  align-content: center;
+  box-shadow: 0 0 3px #3e3e3e;
+  border-radius: var(--primary-radius);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 1px solid var(--primary-color);
 }
